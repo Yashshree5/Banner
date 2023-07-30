@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+h3 {
+  font-size: 14px;
+}
+h1 {
+  font-size: 20px;
+}
+</style>
+<h3> Home > Checkout <h3>
+<h1> Secure One-step Checkout <h1>
+<h1 style="color:blue;">Your Product will Become available Immediately After Purschase </h1>
+<style>
+    #timer-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #timer-text {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+
+    #reset-button {
+      margin-top: 10px;
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div id="timer-container">
+    <img src="clock_image.png" alt="Clock Image" width="50">
+    <span id="timer-text">Ends in:</span>
+    <div id="timer"></div>
+  </div>
+  <div id="reset-button">Reset Timer</div>
+
+  <script>
+    let timerInterval;
+
+    function startTimer(duration) {
+      clearInterval(timerInterval); // Clear any existing timer interval
+
+      let timer = duration;
+      timerInterval = setInterval(function () {
+        let hours = Math.floor(timer / 3600);
+        let minutes = Math.floor((timer % 3600) / 60);
+        let seconds = timer % 60;
+
+        hours = hours < 10 ? '0' + hours : hours;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+
+        document.getElementById('timer').innerText = hours + ':' + minutes + ':' + seconds;
+
+        if (--timer < 0) {
+          timer = duration;
+        }
+      }, 1000);
+    }
+
+    // Set the duration of the timer (in seconds)
+    const totalSeconds = 3600; // Change this value to the desired duration
+
+    startTimer(totalSeconds);
+
+    // Reset timer when the reset button is clicked
+    document.getElementById('reset-button').addEventListener('click', function () {
+      startTimer(totalSeconds);
+    });
+  </script>
+<h2> Review your order <h2>
+<h2> The following items have been added to your shopping cart. <h2>
+<style>
+ {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+ td, th {
+  border: 1px  Grey;
+  padding: 8px;
+}
+
+ tr:nth-child(even){background-color: white;}
+ tr:hover {background-color:;}
+
+ th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:rgb(240, 240, 240);
+  color: white;
+}
+</style>
+</head>
+<body>
+
+
+<table id="customers">
+  <tr>
+    <th><h1 style="color:rgb(180, 180, 180);"> #</h1></th>
+    <th> 
+   <h1 style="color:rgb(180, 180, 180);"> Product Description</h1></th>
+    <th><h1 style="color:rgb(180, 180, 180);"> Price</h1></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td><h1 style="color:blue;">Microsoft 62-193 </h1>
+        Premium File <br>
+         Training Course <br>
+         Get New Question Updates for:<br>
+            <style>
+       .button {
+        background-color:rgb(180, 180, 180) ; 
+        border: none;
+         color: white;
+          padding: 15px 32px;
+        text-align: center;
+         text-decoration: none;
+        display: inline-block;
+       margin: 4px 2px;
+       cursor: pointer;
+            }
+         .button {font-size: 40px;} </style>
+            <button type="button" class="btn btn-outline-primary">30 Days(Free)</button> 
+           </style>
+            </td>
+    <td>$49.50</td>
+    <td> 
+     <style>
+       .button {
+        background-color:rgb(180, 180, 180) ; 
+        border: none;
+         color: white;
+          padding: 15px 32px;
+        text-align: center;
+         text-decoration: none;
+        display: inline-block;
+       margin: 4px 2px;
+       cursor: pointer;
+            }
+         .button {font-size: 20px;} </style>
+            <button class="button button">remove</button> 
+           </style>
+</td>
+  </tr>
+  
+  
+</table>
+
+</body>
+</html>
